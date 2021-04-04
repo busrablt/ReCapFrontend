@@ -1,20 +1,20 @@
-<div class="table">
+<table class="table  table-dark table-hover">
     <thead>
-        <tr>
-            <th>Rental Id</th>
-            <th>Car Id</th>
-            <th>Customer  Id</th>
-            <th>Rent Day</th>
-            <th>Return Day</th>
-        </tr>
+      <tr class="text-center">
+        <th>Rental Id</th>
+        <th>Car Id</th>
+        <th>Customer  Id</th>
+        <th>Rent Date</th>
+        <th>Return Date</th>
+      </tr>
     </thead>
-
-    <tr *ngFor="let rental of rentals">
-        <td>{{rental.rentalId}}</td>
-        <td>{{rental.carId}}</td>
-        <td>{{rental.customerId}}</td>
-        <td>{{rental.rentDate}}</td>
-        <td>{{rental.returnDay}}</td>
-    </tr>
-
-</div>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+            <td>{{rental.rentalId}}</td>
+            <td>{{rental.carId}}</td>
+            <td>{{rental.customerId}}</td>
+            <td>{{rental.rentDate}}</td>
+            <td>{{rental.returnDate}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,24 +1,26 @@
-<div class="table">
+<table class="table  table-dark table-hover">
     <thead>
-        <tr>
-            <th>Id</th>
+      <tr class="text-center">
+        <th>Id</th>
             <th>Car Name</th>
             <th>Brand Name</th>
             <th>Color Name</th>
             <th>Model Year</th>
             <th>Descriptions</th>
             <th>Daily Price</th>
-        </tr>
+            <th>Details</th>
+      </tr>
     </thead>
-
-    <tr *ngFor="let car of cars">
-        <td>{{car.Id}}</td>
+    <tbody>
+      <tr *ngFor="let car of cars" routerLink="/cars/car-detail/{{car.id}}">
+        <td>{{car.id}}</td>
         <td>{{car.carName}}</td>
         <td>{{car.brandId}}</td>
         <td>{{car.colorId}}</td>
         <td>{{car.modelYear}}</td>
         <td>{{car.descriptions}}</td>
         <td>{{car.dailyPrice}}</td>
-    </tr>
-
-</div>
+        <button class = "btn btn-outline-primary" type="button" routerLink="/cars/car-detail/{{car.id}}"> View </button>
+      </tr>
+    </tbody>
+  </table>

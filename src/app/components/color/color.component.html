@@ -1,14 +1,13 @@
-<div class="table">
+<table class="table  table-dark table-hover">
     <thead>
-        <tr>
-            <th>Color Id</th>
-            <th>Color Name</th>
-        </tr>
+      <tr class="text-center">
+        <th>Colors</th>
+      </tr>
     </thead>
-
-    <tr *ngFor="let color of colors">
-        <td>{{color.colorId}}</td>
-        <td>{{color.colorName}}</td>
-    </tr>
-
-</div>
+    <tbody>
+      <tr (click)="setCurrentColor(color)"  *ngFor="let color of colors"
+      routerLink="/cars/color/{{color.colorId}}" [class]="getCurrentColorClass(color)">
+        <td class="list-item-custom">{{ color.colorName }}</td>
+      </tr>
+    </tbody>
+  </table>

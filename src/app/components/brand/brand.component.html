@@ -1,14 +1,16 @@
-<div class="table">
-    <thead>
-        <tr>
-            <th>Brand Id</th>
-            <th>Brand Name</th>
-        </tr>
-    </thead>
-
-    <tr *ngFor="let brand of brands">
-        <td>{{brand.brandId}}</td>
-        <td>{{brand.brandName}}</td>
+<table  class="table table-dark table-hover">
+  <thead>
+    <tr class="text-center">
+      <th>Brands</th>
     </tr>
+  </thead>
+  <tbody >
+    <tr (click)="setCurrentBrand(brand) " *ngFor="let brand of brands" 
+    routerLink="/cars/brand/{{brand.brandId}}" [class]="getCurrentBrandClass(brand)">
+      <td class="list-item-custom">{{ brand.brandName }}</td>
+    </tr>
+  </tbody>
+</table>
 
-</div>
+
+
